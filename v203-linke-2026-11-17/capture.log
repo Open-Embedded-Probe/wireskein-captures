@@ -1,0 +1,38 @@
+high/target_info: rc 0 0.10 s, 0.98 MB, try 1 holdout
+high/read_ram_256: rc 0 0.13 s, 0.99 MB, try 1
+high/read_flash_4k: rc 0 0.28 s, 1.23 MB, try 1
+high/flash_pattern4k: rc 0 0.76 s, 2.68 MB, try 1 holdout
+high/verify_pattern4k: rc 0 0.18 s, 1.23 MB, try 1
+high/read_pattern4k: rc 0 0.20 s, 1.23 MB, try 1 holdout
+high/dbg_halt: rc 0 0.13 s, 0.98 MB, try 1
+high/dbg_regs: rc 0 0.19 s, 1.07 MB, try 1
+high/dbg_step: rc 0 0.15 s, 0.99 MB, try 1 holdout
+high/dbg_resume: rc 0 0.13 s, 0.98 MB, try 1
+high/reset: rc 0 0.14 s, 0.98 MB, try 1 holdout
+high/erase_all: rc 0 0.22 s, 1.19 MB, try 1 holdout
+high/read_erased_1k: rc 0 0.13 s, 1.05 MB, try 1
+high/flash_sketch: rc 0 0.41 s, 1.55 MB, try 1 holdout
+low/target_info: rc 0 0.21 s, 0.99 MB, try 1
+low/read_ram_256: rc 0 0.15 s, 1.00 MB, try 1
+low/read_flash_4k: rc 0 0.25 s, 1.25 MB, try 1
+low/flash_pattern4k: rc 0 0.98 s, 2.85 MB, try 1
+low/verify_pattern4k: rc 0 0.35 s, 1.26 MB, try 1 holdout
+low/read_pattern4k: rc 0 0.24 s, 1.26 MB, try 1
+low/dbg_halt: rc 0 0.14 s, 0.98 MB, try 1 holdout
+low/dbg_regs: rc 0 0.24 s, 1.07 MB, try 1
+low/dbg_step: rc 0 0.13 s, 1.00 MB, try 1 holdout
+low/dbg_resume: rc 0 0.14 s, 0.98 MB, try 1 holdout
+low/reset: rc 0 0.16 s, 0.99 MB, try 1 holdout
+low/erase_all: rc 0 0.24 s, 1.17 MB, try 1 holdout
+low/read_erased_1k: rc 0 0.14 s, 1.05 MB, try 1 holdout
+low/flash_sketch: rc 0 0.45 s, 1.60 MB, try 1 holdout
+high/x_read_flash_64k: rc 0 1.27 s, 4.85 MB, try 1
+high/x_read_ram_20k: rc 0 0.49 s, 2.23 MB, try 1 holdout
+high/x_dbg_step_1: rc 0 0.12 s, 0.99 MB, try 1
+high/x_dbg_step_2: rc 0 0.13 s, 0.99 MB, try 1 holdout
+high/x_dbg_step_3: rc 0 0.13 s, 0.99 MB, try 1 holdout
+high/x_target_info_2: rc 0 0.12 s, 0.98 MB, try 1 holdout
+high/x_target_info_3: rc 0 0.10 s, 0.98 MB, try 1 holdout
+high/x_target_info_4: rc 0 0.15 s, 0.98 MB, try 1
+high/x_target_info_5: rc 0 0.11 s, 0.98 MB, try 1 holdout
+exit 0
