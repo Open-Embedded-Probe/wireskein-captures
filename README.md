@@ -5,7 +5,9 @@ taken outside WireSkein (the debugger's or the firmware's own record, what was r
 
 These are the raw streams. WireSkein's algorithm bench (`bench/` of wireskein) reads its own copies under
 `bench/data/`: each capture cut to the operation it holds, with the truth beside it; the copy's `SOURCE.json` names
-this repository's commit and each file it came from. The tools that took and cut them are in that copy's `tools/`.
+this repository's commit and each file it came from.
+
+Captures are taken here: each directory's `tools/` takes them (`capture.py`), checks the truth (`truth.py`) and cuts them for the bench (`publish.py`). Only what is taken and settled is copied into wireskein's `bench/data/` by `publish.py` (nothing is taken in wireskein's working tree).
 
 | Directory | What |
 |---|---|

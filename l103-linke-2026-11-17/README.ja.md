@@ -10,6 +10,6 @@ WCH-LinkE（`0E028F0692F1`）→ CH32L103C8T6（UID `3a6dabcda282bc48`）の RVS
 - `backup/`: 収録の前の L103 のオプションバイトと target info（収録の後に flash とオプションバイトを収録の前と同じに戻し、読み戻して確かめた。flash の中身はほかのプロジェクトの試験用ファームなので、ここには入れていない）。
 - `*.log`、`rate-report.md`、`rate-compare.json`: 収録、正解の照合、取り込みの速さの比較の出力。
 
-道具（`capture.py`、`truth.py`、`publish.py`、`rate_report.py`、`rate_compare.py`）と説明は、wireskein の
-`bench/data/l103-linke-2026-11-17/`（測定台の写し）にあります。取り込みの道具は ch32rv を PATH か環境変数 `CH32RV` から使い、
+道具は `tools/`（`capture.py`、`truth.py`、`publish.py`、`rate_report.py`、`rate_compare.py`、書き込んだイメージ）。測定台の写しと
+その説明は、wireskein の `bench/data/l103-linke-2026-11-17/` にあります。取り込みの道具は ch32rv を PATH か環境変数 `CH32RV` から使い、
 `take.json` の引数のファイルは道具のフォルダ（`tools/`）からの相対です。

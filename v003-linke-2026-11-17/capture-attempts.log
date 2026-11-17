@@ -1,0 +1,31 @@
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 438699344 ticks at 1.6e+08 Hz (2.74187 s)
+link: opened in 0.73 s, read 111870.5 KB in 3.12 s (35821.5 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 111870.5 KB in 4190 frames over 3.12 s (35821.5 KB/s))
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 428796668 ticks at 1.6e+08 Hz (2.67998 s)
+link: opened in 1.24 s, read 111883.5 KB in 3.13 s (35734.1 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 111883.5 KB in 4193 frames over 3.13 s (35734.1 KB/s))
+  retry high/target_info (capture rc 1: wireskein capture: NotOepProbe: no way in to 1209:4f45: vendor: USBErrorBusy: LIBUSB_ERROR_BUSY [-6]; hid: hid: no valid confirm answer (TimeoutError: no result from the probe); closed, nothing else sent (transports §3))
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 434325440 ticks at 1.6e+08 Hz (2.71453 s)
+link: opened in 0.75 s, read 111826.7 KB in 3.13 s (35773.1 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 111826.7 KB in 4190 frames over 3.13 s (35773.1 KB/s))
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 433617812 ticks at 1.6e+08 Hz (2.71011 s)
+link: opened in 0.81 s, read 112279.7 KB in 3.14 s (35803.5 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 112279.7 KB in 4201 frames over 3.14 s (35803.5 KB/s))
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 435249868 ticks at 1.6e+08 Hz (2.72031 s)
+link: opened in 1.09 s, read 112851.6 KB in 3.15 s (35803.2 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 112851.6 KB in 4226 frames over 3.15 s (35803.2 KB/s))
+  retry high/target_info (capture rc 1: o.tmp/c.wireskein: 2 logic channels, 469978728 ticks at 1.6e+08 Hz (2.93737 s)
+link: opened in 1.07 s, read 120065.8 KB in 3.33 s (36055.8 KB/s)
+data rate: 40 MB/s
+buffer: 8658600 B on the probe: this host may pause 216 ms before it drops
+stream: 120065.8 KB in 4497 frames over 3.33 s (36055.8 KB/s))
