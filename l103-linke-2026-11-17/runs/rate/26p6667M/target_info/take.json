@@ -1,0 +1,24 @@
+{
+ "scenario": "rate/26p6667M/target_info",
+ "args": [
+  "--speed",
+  "high",
+  "target",
+  "info"
+ ],
+ "rc": 0,
+ "seconds": 0.1045,
+ "t0_host_ns": 2839620970006954,
+ "t1_host_ns": 2839621074457150,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "26666667",
+ "capture_log": [
+  "runs/rate__26p6667M__target_info.tmp/c.wireskein: 2 logic channels, 133396480 ticks at 2.66667e+07 Hz (5.00237 s)",
+  "link: opened in 0.46 s, read 33349.1 KB in 5.11 s (6530.1 KB/s)",
+  "data rate: 6.67 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 1.3e+03 ms before it drops",
+  "stream: 33349.1 KB in 1734 frames over 5.11 s (6530.1 KB/s)"
+ ]
+}

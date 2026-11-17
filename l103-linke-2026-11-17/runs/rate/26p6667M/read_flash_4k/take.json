@@ -1,0 +1,27 @@
+{
+ "scenario": "rate/26p6667M/read_flash_4k",
+ "args": [
+  "--speed",
+  "high",
+  "read",
+  "--range",
+  "0x08000000+4096",
+  "-o",
+  "read.bin"
+ ],
+ "rc": 0,
+ "seconds": 0.2856,
+ "t0_host_ns": 2839632499148786,
+ "t1_host_ns": 2839632784780717,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": true,
+ "rate_requested": "26666667",
+ "capture_log": [
+  "runs/rate__26p6667M__read_flash_4k.tmp/c.wireskein: 2 logic channels, 133380352 ticks at 2.66667e+07 Hz (5.00176 s)",
+  "link: opened in 0.85 s, read 33345.1 KB in 5.11 s (6530.6 KB/s)",
+  "data rate: 6.67 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 1.3e+03 ms before it drops",
+  "stream: 33345.1 KB in 1734 frames over 5.11 s (6530.6 KB/s)"
+ ]
+}

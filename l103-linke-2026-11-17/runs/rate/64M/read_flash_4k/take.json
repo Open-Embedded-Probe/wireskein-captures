@@ -1,0 +1,27 @@
+{
+ "scenario": "rate/64M/read_flash_4k",
+ "args": [
+  "--speed",
+  "high",
+  "read",
+  "--range",
+  "0x08000000+4096",
+  "-o",
+  "read.bin"
+ ],
+ "rc": 0,
+ "seconds": 0.1783,
+ "t0_host_ns": 2840319653040388,
+ "t1_host_ns": 2840319831342887,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": true,
+ "rate_requested": "64000000",
+ "capture_log": [
+  "runs/rate__64M__read_flash_4k.tmp/c.wireskein: 2 logic channels, 320072704 ticks at 6.4e+07 Hz (5.00114 s)",
+  "link: opened in 0.54 s, read 80018.2 KB in 5.11 s (15662.2 KB/s)",
+  "data rate: 16 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 541 ms before it drops",
+  "stream: 80018.2 KB in 4160 frames over 5.11 s (15662.2 KB/s)"
+ ]
+}

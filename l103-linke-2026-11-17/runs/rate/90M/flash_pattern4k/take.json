@@ -1,0 +1,25 @@
+{
+ "scenario": "rate/90M/flash_pattern4k",
+ "args": [
+  "--speed",
+  "high",
+  "flash",
+  "tools/pattern-4k.bin",
+  "--yes"
+ ],
+ "rc": 0,
+ "seconds": 0.6936,
+ "t0_host_ns": 2840226728461172,
+ "t1_host_ns": 2840227422074733,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "90000000",
+ "capture_log": [
+  "runs/rate__90M__flash_pattern4k.tmp/c.wireskein: 2 logic channels, 450071552 ticks at 9e+07 Hz (5.0008 s)",
+  "link: opened in 0.42 s, read 112517.9 KB in 5.11 s (22032.1 KB/s)",
+  "data rate: 22.5 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 385 ms before it drops",
+  "stream: 112517.9 KB in 5849 frames over 5.11 s (22032.1 KB/s)"
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "scenario": "rate/4M/target_info",
+ "args": [
+  "--speed",
+  "high",
+  "target",
+  "info"
+ ],
+ "rc": 0,
+ "seconds": 0.1557,
+ "t0_host_ns": 2839815667481767,
+ "t1_host_ns": 2839815823211333,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "4000000",
+ "capture_log": [
+  "runs/rate__4M__target_info.tmp/c.wireskein: 2 logic channels, 20013056 ticks at 4e+06 Hz (5.00326 s)",
+  "link: opened in 0.83 s, read 5003.3 KB in 5.11 s (979.5 KB/s)",
+  "data rate: 1 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 8.66e+03 ms before it drops",
+  "stream: 5003.3 KB in 260 frames over 5.11 s (979.5 KB/s)"
+ ]
+}

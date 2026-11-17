@@ -1,0 +1,126 @@
+{
+ "wireskein": "0.0.28",
+ "parts": [
+  {
+   "fit": {
+    "score": 0.0,
+    "claimed": false
+   },
+   "reading": {
+    "frames": 1,
+    "ok": 1,
+    "unanswered": 0,
+    "restored": 0,
+    "repaired": 1,
+    "rate_ok": false,
+    "unread": 5,
+    "unread_edges": 25616,
+    "glitches": 0,
+    "clock_edges": 21600,
+    "ringing": {
+     "SWDIO": 0
+    },
+    "data_edges": {
+     "SWDIO": 5382
+    },
+    "glitch_edges": 0,
+    "ringing_edges": {
+     "SWDIO": 0
+    },
+    "glitch_share": 0.0,
+    "ringing_share": {
+     "SWDIO": 0.0
+    },
+    "noisy": false,
+    "line_changes": {
+     "SWCLK": {
+      "changes": 21600,
+      "last": 1378763
+     },
+     "SWDIO": {
+      "changes": 5382,
+      "last": 1378761
+     }
+    }
+   },
+   "clock_speeds": [
+    {
+     "period_ns": 6375.0,
+     "freq_hz": 156862.7,
+     "high_ns": 3187.5,
+     "low_ns": 3187.5,
+     "frames": 1,
+     "s": 1373063,
+     "e": 1374930,
+     "rate_ok": false
+    }
+   ]
+  }
+ ],
+ "tick_hz": [
+  32000000,
+  51
+ ],
+ "dmi": [
+  [
+   "R",
+   "0x00",
+   2384557696
+  ],
+  [
+   "R",
+   "0x00",
+   1212691680
+  ],
+  [
+   "R",
+   "0x00",
+   2904557608
+  ],
+  [
+   "R",
+   "0x00",
+   497025860
+  ],
+  [
+   "R",
+   "0x00",
+   467796428
+  ],
+  [
+   "R",
+   "0x00",
+   225968362
+  ],
+  [
+   "R",
+   "0x00",
+   109971830
+  ],
+  [
+   "R",
+   "0x00",
+   21758005
+  ],
+  [
+   "R",
+   "0x00",
+   273846285
+  ],
+  [
+   "R",
+   "0x00",
+   53362689
+  ],
+  [
+   "R",
+   "0x00",
+   3318180096
+  ],
+  [
+   "R",
+   "0x00",
+   1896329344
+  ]
+ ]
+}

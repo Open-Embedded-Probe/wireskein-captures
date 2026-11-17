@@ -1,0 +1,24 @@
+{
+ "scenario": "rate/64M/target_info",
+ "args": [
+  "--speed",
+  "high",
+  "target",
+  "info"
+ ],
+ "rc": 0,
+ "seconds": 0.1027,
+ "t0_host_ns": 2840309309245923,
+ "t1_host_ns": 2840309411952675,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "64000000",
+ "capture_log": [
+  "runs/rate__64M__target_info.tmp/c.wireskein: 2 logic channels, 320121088 ticks at 6.4e+07 Hz (5.00189 s)",
+  "link: opened in 0.43 s, read 80030.3 KB in 5.11 s (15667.6 KB/s)",
+  "data rate: 16 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 541 ms before it drops",
+  "stream: 80030.3 KB in 4160 frames over 5.11 s (15667.6 KB/s)"
+ ]
+}

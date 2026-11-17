@@ -1,0 +1,27 @@
+{
+ "scenario": "rate/53p3333M/low_read_ram_256",
+ "args": [
+  "--speed",
+  "low",
+  "read",
+  "--range",
+  "0x20000000+256",
+  "-o",
+  "read.bin"
+ ],
+ "rc": 0,
+ "seconds": 0.1443,
+ "t0_host_ns": 2839525624767820,
+ "t1_host_ns": 2839525769111255,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "53333333",
+ "capture_log": [
+  "runs/rate__53p3333M__low_read_ram_256.tmp/c.wireskein: 2 logic channels, 266764288 ticks at 5.33333e+07 Hz (5.00183 s)",
+  "link: opened in 0.48 s, read 66691.1 KB in 5.11 s (13061.3 KB/s)",
+  "data rate: 13.3 MB/s",
+  "buffer: 8658600 B on the probe: this host may pause 649 ms before it drops",
+  "stream: 66691.1 KB in 3467 frames over 5.11 s (13061.3 KB/s)"
+ ]
+}
