@@ -4,19 +4,19 @@
    "protocol": "rvswd",
    "decoded": true,
    "fit": {
-    "score": 0.9902,
+    "score": 0.9884,
     "claimed": true,
     "verdict": "confirmed"
    },
    "reading": {
-    "frames": 414,
-    "ok": 213,
+    "frames": 412,
+    "ok": 211,
     "unanswered": 201,
     "restored": 0,
     "repaired": 0,
     "rate_ok": true,
     "unread": 10,
-    "unread_edges": 9087,
+    "unread_edges": 10002,
     "glitches": 54,
     "clock_edges": 78482,
     "ringing": {
@@ -46,16 +46,6 @@
     }
    },
    "clock_speeds": [
-    {
-     "period_ns": 134.3,
-     "freq_hz": 7443245.3,
-     "high_ns": 62.5,
-     "low_ns": 71.8,
-     "frames": 2,
-     "s": 348059271,
-     "e": 357814601,
-     "rate_ok": true
-    },
     {
      "period_ns": 1112.5,
      "freq_hz": 898876.4,
@@ -95,16 +85,6 @@
   1
  ],
  "dmi": [
-  [
-   "R",
-   "0x00",
-   983013
-  ],
-  [
-   "R",
-   "0x00",
-   3145727
-  ],
   [
    "W",
    "0x7e",
@@ -644,16 +624,6 @@
    "R",
    "0x04",
    3408906
-  ],
-  [
-   "R",
-   "0x1f",
-   285212672
-  ],
-  [
-   "R",
-   "0x1f",
-   2624011367
   ],
   [
    "R",
