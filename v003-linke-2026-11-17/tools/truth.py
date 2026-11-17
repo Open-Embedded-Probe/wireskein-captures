@@ -20,10 +20,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-# the LinkE attaches over RVSWD (SWCLK and SWDIO), then talks SWIO on SWDIO alone: each read on its own (a spec of
-# both on the shared line reads neither), their DMI accesses put in time order
-SPECS = [json.dumps({"buses": [{"protocol": "rvswd", "pins": {"clk": "SWCLK", "dio": "SWDIO"}}]}),
-         json.dumps({"buses": [{"protocol": "swio", "pins": {"dio": "SWDIO"}}]})]
+# SWIO on its one line (the LinkE's RVSWD try on attach is not taken)
+SPECS = [json.dumps({"buses": [{"protocol": "swio", "pins": {"dio": "SWIO"}}]})]
 
 
 def dmi_ops(ndjson: Path) -> list[dict]:

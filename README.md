@@ -12,6 +12,7 @@ Captures are taken here: each directory's `tools/` takes them (`capture.py`), ch
 | Directory | What |
 |---|---|
 | `l103-linke-2026-11-17/` | A WCH-LinkE's RVSWD to a CH32L103C8T6, taken by an OEP ESP32-P4X at the LinkE's pins at 160 MS/s: 103 ch32rv operations (the LinkE's speeds high / medium / low, and more), and 4 operations at 26 capture rates (160 MHz to 627 kHz, whole and fractional dividers). Truth: ch32rv's USB record (its DMI operations) and what it read |
+| `v003-linke-2026-11-17/` | A WCH-LinkE's SWIO to a CH32V003F4P6, taken by the same P4X on the one SWIO line at 160 MS/s (the LinkE's two-line RVSWD try on attach in 3 runs of their own). The operations of the L103 set, and 5 capture rates. Truth: ch32rv's USB record and what it read |
 
 Each run is wireskein-run/1 (`run.json`, `c0001.wireskein`) with `take.json` (how it was taken), `truth.json`
 (the truth), `reading.json` (WireSkein's reading at the time: not truth), and the debugger's own files.

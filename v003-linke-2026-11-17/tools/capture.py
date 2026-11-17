@@ -4,7 +4,7 @@
 
 Each run (wireskein-run/1, wireskein.runlog.Recorder): run.json (the heading "# <scenario>", the ch32rv command and
 its exit code / output), c0001.wireskein (SWCLK, SWDIO as tapped at the LinkE's pins: OEP ESP32-P4X e8f60ae84dd7,
-GPIO21 = SWCLK, GPIO16 = SWDIO (SWIO), stream mode, no glitch filter), and the truth beside it, taken outside WireSkein:
+GPIO16 = SWIO (the LinkE's SWDIO; its SWCLK, moving only while it tries RVSWD on attach, not taken), stream mode, no glitch filter), and the truth beside it, taken outside WireSkein:
 ch32rv.ndjson (ch32rv --capture: every USB round trip with the LinkE), ch32rv.json (its --json stdout),
 ch32rv.stderr, and read.bin for a read. The capture is checked to hold the whole command (host clock of the
 first sample from meta.probe.clock, against time.monotonic_ns() around ch32rv); a capture that lost data or
@@ -27,7 +27,7 @@ from wireskein.runlog import Recorder
 CH32RV = os.environ.get("CH32RV", "ch32rv")     # the ch32rv to run (a build of ch32-riscv-ug/ch32rv)
 LINKE = "FBC18F0680B0"
 PROBE = "oep:oep://e8f60ae84dd7"
-CHANNELS = "SWCLK=GPIO21,SWDIO=GPIO16"
+CHANNELS = "SWIO=GPIO16"     # SWIO alone: 20 MB/s at 160 MS/s (the LinkE's RVSWD try on attach, on GPIO21 too, is left out)
 RATE = "160M"
 TOOLS = Path(__file__).resolve().parent
 TRIES = int(os.environ.get("TRIES", "4"))   # attempts per scenario (a busy host may lose a 40 MB/s stream now and then)
@@ -161,7 +161,16 @@ def first_sample_host_ns(path: Path) -> tuple[int, float] | None:
     return before["host_ns"] + (start - before["uptime_ns"]), part["ticks"] * den / num
 
 
-def take(root: Path, name: str, args: list[str], log, rate: str = RATE) -> dict:
+TWO_LINES = "SWIO=GPIO16,SWCLK=GPIO21"
+# the LinkE's RVSWD try on attach, both lines, kept short: a one-shot into the probe's memory from SWCLK's first fall,
+# 0.15 s at 160 MS/s (the RVSWD try takes some 100 ms; a triggered one-shot of two lines at 160 MS/s that waits for
+# its trigger longer than the probe's ring needs its firmware from b9b46df on: before, the trigger search fell behind
+# and the segment lost data); no stream, so a busy host cannot lose it
+ATTACH_RATE = "160M"
+ONESHOT = ["--mode", "oneshot", "--samples", "24M", "--trigger", "SWCLK:fall", "--pretrigger", "100000", "--timeout", "30"]
+
+
+def take(root: Path, name: str, args: list[str], log, rate: str = RATE, two: bool = False) -> dict:
     run = root / name
     tmp = root / (name.replace("/", "__") + ".tmp")
     duration = 5.0
@@ -177,8 +186,9 @@ def take(root: Path, name: str, args: list[str], log, rate: str = RATE) -> dict:
                        tap="LinkE side", probe=PROBE, scenario=name, holdout=holdout(name))
         rec.heading(1, name)
         armed = rec.armed()
-        cap = subprocess.Popen(["wireskein", "capture", "--source", PROBE, "--channels", CHANNELS, "--mode", "stream",
-                                "--rate", rate, "--duration", f"{duration:g}s", "-o", str(cap_path)],
+        how = (["--channels", TWO_LINES, "--rate", ATTACH_RATE, *ONESHOT] if two else
+               ["--channels", CHANNELS, "--mode", "stream", "--rate", rate, "--duration", f"{duration:g}s"])
+        cap = subprocess.Popen(["wireskein", "capture", "--source", PROBE, *how, "-o", str(cap_path)],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         time.sleep(LEAD_S)
         shown = " ".join(["ch32rv", *cmd[1:]]).replace(str(tmp) + "/", "").replace(str(TOOLS) + "/", "tools/")
@@ -200,7 +210,10 @@ def take(root: Path, name: str, args: list[str], log, rate: str = RATE) -> dict:
             else:
                 start, span_s = fs
                 end = start + span_s * 1e9
-                if t0 - 0.1e9 < start or t1 + 0.2e9 > end:
+                if two:
+                    if not (t0 - 0.1e9 <= start + 1e9 * 100_000 / 160e6 <= t1 + 0.1e9):   # the trigger inside the command
+                        ok, why = False, f"one-shot triggered {(start - t0) / 1e9:+.3f} s from the command"
+                elif t0 - 0.1e9 < start or t1 + 0.2e9 > end:
                     ok, why = False, f"window {(start - t0) / 1e9:+.3f}..{(end - t1) / 1e9:+.3f} s around the command ({took:.2f} s)"
         if not ok:
             print(f"  retry {name} ({why})", flush=True)
@@ -222,7 +235,7 @@ def take(root: Path, name: str, args: list[str], log, rate: str = RATE) -> dict:
         shown_args = [x.replace(str(tmp) + "/", "").replace(str(TOOLS) + "/", "tools/") for x in a]
         info = {"scenario": name, "args": shown_args, "rc": p.returncode, "seconds": round(took, 4),
                 "t0_host_ns": t0, "t1_host_ns": t1, "stream_s": duration, "attempts": attempt + 1,
-                "holdout": holdout(name), "rate_requested": rate, "capture_log": cap_out.strip().splitlines()}
+                "holdout": holdout(name), "rate_requested": ATTACH_RATE if two else rate, "lines": TWO_LINES if two else CHANNELS, "capture_log": cap_out.strip().splitlines()}
         (run / "take.json").write_text(json.dumps(info, indent=1))
         shutil.rmtree(tmp, ignore_errors=True)
         return info
@@ -235,13 +248,15 @@ def main() -> None:
     pats = sys.argv[2:] or ["*"]
     root.mkdir(parents=True, exist_ok=True)
     log = open(root / "retries.jsonl", "a")
-    todo = [(n, a, RATE) for n, a in scenarios()] + rate_scenarios()
-    for name, args, rate in todo:
+    todo = [(n, a, RATE, False) for n, a in scenarios()] + [(n, a, r, False) for n, a, r in rate_scenarios()]
+    todo += [(f"attach2/{sp}/target_info", ["--speed", sp, "target", "info"], RATE, True)
+             for sp in ("high", "medium", "low")]
+    for name, args, rate, two in todo:
         if not any(fnmatch.fnmatch(name, p) for p in pats):
             continue
         if (root / name / "take.json").exists():
             continue
-        info = take(root, name, args, log, rate)
+        info = take(root, name, args, log, rate, two)
         if info is None:
             print(f"{name}: FAILED (no good capture in {TRIES} tries; retries.jsonl)", flush=True)
             continue

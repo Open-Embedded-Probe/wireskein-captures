@@ -1,0 +1,22 @@
+{
+ "scenario": "attach2/medium/target_info",
+ "args": [
+  "--speed",
+  "medium",
+  "target",
+  "info"
+ ],
+ "rc": 0,
+ "seconds": 0.1512,
+ "t0_host_ns": 2882208976042067,
+ "t1_host_ns": 2882209127198017,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": false,
+ "rate_requested": "160M",
+ "lines": "SWIO=GPIO16,SWCLK=GPIO21",
+ "capture_log": [
+  "runs/attach2__medium__target_info.tmp/c.wireskein: 2 logic channels, 24000000 ticks at 1.6e+08 Hz (0.15 s)",
+  "link: not raised (the link is not a serial port this host opened), opened in 0.75 s, read 6000.0 KB in 0.51 s (11811.0 KB/s)"
+ ]
+}

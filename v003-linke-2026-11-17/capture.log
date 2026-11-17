@@ -1,0 +1,132 @@
+high/target_info: rc 0 0.21 s, 0.46 MB, try 1 holdout
+high/read_ram_256: rc 0 0.18 s, 0.48 MB, try 1
+high/read_flash_4k: rc 0 0.22 s, 0.59 MB, try 1
+high/flash_pattern4k: rc 0 1.32 s, 2.25 MB, try 1 holdout
+  retry high/verify_pattern4k (capture rc 1: wireskein capture: NotOepProbe: no way in to 1209:4f45: vendor: USBErrorBusy: LIBUSB_ERROR_BUSY [-6]; hid: hid: no valid confirm answer (TimeoutError: no result from the probe); closed, nothing else sent (transports §3))
+high/verify_pattern4k: rc 0 0.32 s, 0.84 MB, try 2
+high/read_pattern4k: rc 0 0.22 s, 0.63 MB, try 1 holdout
+  retry high/dbg_halt (capture rc 1: wireskein capture: RuntimeError: probe oep://e8f60ae84dd7: the probe is in use by oneshot (lease 29988 ms left, kept going))
+  retry high/dbg_halt (capture rc 1: wireskein capture: NotOepProbe: no way in to 1209:4f45: vendor: USBErrorBusy: LIBUSB_ERROR_BUSY [-6]; hid: hid: no valid confirm answer (TimeoutError: no result from the probe); closed, nothing else sent (transports §3))
+high/dbg_halt: rc 0 0.18 s, 1.01 MB, try 3
+high/dbg_regs: rc 0 0.31 s, 0.50 MB, try 1
+high/dbg_step: rc 0 0.16 s, 0.47 MB, try 1 holdout
+high/dbg_resume: rc 0 0.17 s, 0.47 MB, try 1
+high/reset: rc 0 0.23 s, 0.47 MB, try 1 holdout
+high/erase_all: rc 0 0.33 s, 0.50 MB, try 1 holdout
+high/read_erased_1k: rc 0 0.20 s, 0.50 MB, try 1
+high/flash_sketch: rc 0 0.79 s, 1.08 MB, try 1 holdout
+medium/target_info: rc 0 0.22 s, 0.46 MB, try 1 holdout
+medium/read_ram_256: rc 0 0.30 s, 0.48 MB, try 1
+medium/read_flash_4k: rc 0 0.24 s, 0.59 MB, try 1
+medium/flash_pattern4k: rc 0 1.21 s, 2.21 MB, try 1
+medium/verify_pattern4k: rc 0 0.20 s, 0.63 MB, try 1 holdout
+medium/read_pattern4k: rc 0 0.20 s, 0.63 MB, try 1
+medium/dbg_halt: rc 0 0.22 s, 0.47 MB, try 1
+medium/dbg_regs: rc 0 0.18 s, 0.50 MB, try 1 holdout
+medium/dbg_step: rc 0 0.16 s, 0.47 MB, try 1
+medium/dbg_resume: rc 0 0.14 s, 0.46 MB, try 1 holdout
+medium/reset: rc 0 0.17 s, 0.47 MB, try 1 holdout
+medium/erase_all: rc 0 0.26 s, 0.50 MB, try 1
+medium/read_erased_1k: rc 0 0.15 s, 0.50 MB, try 1
+medium/flash_sketch: rc 0 0.72 s, 1.08 MB, try 1 holdout
+  retry low/target_info (capture rc 1: wireskein capture: OSError: USBErrorNoDevice: LIBUSB_ERROR_NO_DEVICE [-4])
+low/target_info: rc 0 0.21 s, 0.47 MB, try 1
+low/read_ram_256: rc 0 0.19 s, 0.48 MB, try 1
+low/read_flash_4k: rc 0 0.21 s, 0.59 MB, try 1
+low/flash_pattern4k: rc 0 1.24 s, 2.22 MB, try 1
+low/verify_pattern4k: rc 0 0.19 s, 0.63 MB, try 1 holdout
+low/read_pattern4k: rc 0 0.22 s, 0.63 MB, try 1
+low/dbg_halt: rc 0 0.17 s, 0.47 MB, try 1 holdout
+low/dbg_regs: rc 0 0.20 s, 0.50 MB, try 1
+low/dbg_step: rc 0 0.16 s, 0.47 MB, try 1 holdout
+low/dbg_resume: rc 0 0.21 s, 0.46 MB, try 1 holdout
+low/reset: rc 0 0.17 s, 0.47 MB, try 1 holdout
+low/erase_all: rc 0 0.26 s, 0.50 MB, try 1 holdout
+low/read_erased_1k: rc 0 0.15 s, 0.50 MB, try 1 holdout
+low/flash_sketch: rc 0 0.72 s, 1.08 MB, try 1 holdout
+high/x_target_info_2: rc 0 0.15 s, 0.46 MB, try 1 holdout
+high/x_target_info_3: rc 0 0.15 s, 0.46 MB, try 1 holdout
+high/x_target_info_4: rc 0 0.14 s, 0.46 MB, try 1
+high/x_target_info_5: rc 0 0.15 s, 0.46 MB, try 1 holdout
+high/x_read_flash_4k_2: rc 0 0.19 s, 0.59 MB, try 1 holdout
+high/x_read_flash_4k_3: rc 0 0.33 s, 0.60 MB, try 1
+high/x_read_flash_16k: rc 0 0.38 s, 0.94 MB, try 1 holdout
+high/x_read_ram_2k: rc 0 0.16 s, 0.55 MB, try 1 holdout
+high/x_read_esig: rc 0 0.14 s, 0.47 MB, try 1
+high/x_read_optbytes: rc 0 0.14 s, 0.47 MB, try 1 holdout
+high/x_read_unaligned_odd: rc 0 0.15 s, 0.47 MB, try 1
+high/x_dbg_halt_w: rc 0 0.16 s, 0.47 MB, try 1
+high/x_write_ram_256: rc 0 0.29 s, 0.70 MB, try 1
+high/x_read_ram_written: rc 0 0.15 s, 0.48 MB, try 1
+high/x_write_ram_word: rc 0 0.31 s, 0.49 MB, try 1
+high/x_read_ram_word: rc 0 0.14 s, 0.47 MB, try 1 holdout
+high/x_dbg_reg_pc: rc 0 0.15 s, 0.47 MB, try 1
+high/x_dbg_reg_sp: rc 0 0.16 s, 0.47 MB, try 1 holdout
+high/x_dbg_reg_misa: rc 0 0.14 s, 0.47 MB, try 1
+high/x_dbg_reg_write_t0: rc 0 0.15 s, 0.47 MB, try 1
+high/x_dbg_reg_t0: rc 0 0.15 s, 0.47 MB, try 1
+high/x_dbg_step_1: rc 0 0.16 s, 0.47 MB, try 1
+high/x_dbg_step_2: rc 0 0.16 s, 0.47 MB, try 1 holdout
+high/x_dbg_step_3: rc 0 0.16 s, 0.47 MB, try 1 holdout
+high/x_dbg_regs_after_step: rc 0 0.16 s, 0.50 MB, try 1
+high/x_dbg_resume_w: rc 0 0.14 s, 0.46 MB, try 1
+high/x_dmi_write_dmcontrol_01: rc 0 0.17 s, 0.46 MB, try 1 holdout
+high/x_dmi_read_dmcontrol: rc 0 0.16 s, 0.46 MB, try 1
+high/x_dmi_read_dmstatus: rc 0 0.15 s, 0.46 MB, try 1
+high/x_dmi_read_hartinfo: rc 0 0.14 s, 0.46 MB, try 1 holdout
+high/x_dmi_read_abstractcs: rc 0 0.15 s, 0.46 MB, try 1 holdout
+high/x_dmi_read_data0: rc 0 0.15 s, 0.46 MB, try 1 holdout
+high/x_dmi_write_data0: rc 0 0.16 s, 0.46 MB, try 1
+high/x_dmi_read_data0_after: rc 0 0.16 s, 0.46 MB, try 1 holdout
+high/x_reset_halt: rc 0 0.15 s, 0.47 MB, try 1
+high/x_reset_dm: rc 0 0.22 s, 0.48 MB, try 1
+high/x_reset_confirm_pc: rc 0 0.37 s, 0.47 MB, try 1
+high/x_release_dm_info: rc 0 0.18 s, 0.46 MB, try 1 holdout
+high/x_connect_under_reset: rc 0 0.26 s, 0.49 MB, try 1
+high/x_err_read_unmapped: rc 0 0.14 s, 0.47 MB, try 1 holdout
+high/x_err_wrong_chip: rc 23 0.13 s, 0.46 MB, try 1 holdout
+high/x_err_verify_mismatch: rc 30 0.21 s, 0.58 MB, try 1
+high/x_option_get: rc 0 0.16 s, 0.48 MB, try 1 holdout
+high/x_option_set_data: rc 0 0.51 s, 0.72 MB, try 1
+high/x_option_get_after_set: rc 0 0.17 s, 0.48 MB, try 1
+high/x_read_obr_after_set: rc 0 0.14 s, 0.47 MB, try 1 holdout
+high/x_option_reset: rc 0 0.51 s, 0.72 MB, try 1
+high/x_option_get_after_reset: rc 0 0.17 s, 0.48 MB, try 1
+high/x_clock_flash: rc 0 0.72 s, 1.03 MB, try 1
+high/x_clock_read_rcc_0: rc 0 0.15 s, 0.47 MB, try 1 holdout
+high/x_clock_target_info: rc 0 0.15 s, 0.46 MB, try 1
+high/x_clock_dbg_halt: rc 0 0.15 s, 0.47 MB, try 1 holdout
+high/x_clock_read_rcc_1: rc 0 0.15 s, 0.47 MB, try 1 holdout
+high/x_clock_dbg_regs: rc 0 0.17 s, 0.50 MB, try 1 holdout
+high/x_clock_dbg_resume: rc 0 0.16 s, 0.46 MB, try 1 holdout
+high/x_clock_reset: rc 0 0.18 s, 0.47 MB, try 1 holdout
+high/x_clock_read_rcc_2: rc 0 0.14 s, 0.47 MB, try 1 holdout
+high/x_clock_read_flash_4k: rc 0 0.20 s, 0.59 MB, try 1
+high/x_clock_flash_pattern4k: rc 0 1.22 s, 2.21 MB, try 1 holdout
+high/x_clock_low_target_info: rc 0 0.14 s, 0.46 MB, try 1
+high/x_flash_sketch_end: rc 0 0.73 s, 1.08 MB, try 1
+rate/160M/target_info: rc 0 0.14 s, 0.46 MB, try 1
+rate/160M/read_flash_4k: rc 0 0.20 s, 0.63 MB, try 1 holdout
+rate/160M/flash_pattern4k: rc 0 1.22 s, 2.22 MB, try 1
+rate/160M/low_read_ram_256: rc 0 0.15 s, 0.48 MB, try 1
+rate/10M/target_info: rc 0 0.14 s, 0.04 MB, try 1
+rate/10M/read_flash_4k: rc 0 0.20 s, 0.09 MB, try 1 holdout
+rate/10M/flash_pattern4k: rc 0 1.23 s, 0.38 MB, try 1
+rate/10M/low_read_ram_256: rc 0 0.15 s, 0.05 MB, try 1
+rate/5M/target_info: rc 0 0.15 s, 0.02 MB, try 1
+rate/5M/read_flash_4k: rc 0 0.21 s, 0.06 MB, try 1 holdout
+rate/5M/flash_pattern4k: rc 0 1.23 s, 0.24 MB, try 1
+rate/5M/low_read_ram_256: rc 0 0.14 s, 0.03 MB, try 1
+rate/133p333M/target_info: rc 0 0.14 s, 0.39 MB, try 1
+rate/133p333M/read_flash_4k: rc 0 0.20 s, 0.55 MB, try 1 holdout
+rate/133p333M/flash_pattern4k: rc 0 1.22 s, 2.18 MB, try 1
+rate/133p333M/low_read_ram_256: rc 0 0.15 s, 0.40 MB, try 1
+rate/50M/target_info: rc 0 0.14 s, 0.16 MB, try 1
+rate/50M/read_flash_4k: rc 0 0.20 s, 0.26 MB, try 1 holdout
+rate/50M/flash_pattern4k: rc 0 1.23 s, 1.19 MB, try 1
+rate/50M/low_read_ram_256: rc 0 0.14 s, 0.17 MB, try 1
+  retry attach2/high/target_info (capture rc 1: wireskein capture: RuntimeError: probe oep://e8f60ae84dd7: the capture stopped with an error (storage) - the probe lost data inside a segment: try a lower rate or fewer channels)
+  retry attach2/high/target_info (capture rc 1: wireskein capture: RuntimeError: probe oep://e8f60ae84dd7: the capture stopped with an error (storage) - the probe lost data inside a segment: try a lower rate or fewer channels)
+attach2/high/target_info: rc 0 0.14 s, 0.13 MB, try 1
+attach2/medium/target_info: rc 0 0.15 s, 0.13 MB, try 1
+attach2/low/target_info: rc 0 0.14 s, 0.13 MB, try 1
