@@ -1,0 +1,2 @@
+c0001.wireskein: 2 logic channels, 40000000 ticks at 8e+07 Hz (0.5 s)
+link: not raised (the link is not a serial port this host opened), opened in 1.01 s, read 10000.0 KB in 1.14 s (8756.6 KB/s)

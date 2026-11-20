@@ -1,0 +1,4 @@
+c0001.wireskein: 2 logic channels, 67108864 ticks at 1.6e+08 Hz (0.41943 s)
+note: SWCLK: 67108864 samples of the 96000000 asked (the probe's limit)
+note: SWDIO: 67108864 samples of the 96000000 asked (the probe's limit)
+link: not raised (the link is not a serial port this host opened), opened in 0.75 s, read 16777.2 KB in 1.14 s (14665.4 KB/s)
