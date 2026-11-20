@@ -1,0 +1,1 @@
+{"contract":"5","ok":true,"cmd":"flash","result":{"flash":{"bytes":4096,"family":"CH32X315","pages":1,"programmer":"loader","restarted_runs":0,"rewritten":0,"running":null,"scope":"keep-store","seconds":0.596544513,"skipped":false,"store":{"address":null,"bytes":0,"method":"none-present"},"verified":true}}}

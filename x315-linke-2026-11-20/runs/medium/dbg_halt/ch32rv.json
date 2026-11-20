@@ -1,0 +1,1 @@
+{"contract":"5","ok":false,"cmd":"dbg.halt","error":{"code":20,"kind":"target-no-response","msg":"no target detected on the debug pins","hint":"check target wiring/power/BOOT; for a protected or bricked target see `ch32rv recover`"}}

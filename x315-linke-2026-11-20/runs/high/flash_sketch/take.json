@@ -1,0 +1,26 @@
+{
+ "scenario": "high/flash_sketch",
+ "args": [
+  "--speed",
+  "high",
+  "flash",
+  "tools/x315_smoke.bin",
+  "--yes"
+ ],
+ "rc": 0,
+ "seconds": 1.0031,
+ "t0_host_ns": 3107140166204574,
+ "t1_host_ns": 3107141169293168,
+ "stream_s": 5.0,
+ "attempts": 1,
+ "holdout": true,
+ "rate_requested": "160M",
+ "lines": "SWIO=GPIO16",
+ "capture_log": [
+  "runs/high__flash_sketch.tmp/c.wireskein: 1 logic channels, 800167424 ticks at 1.6e+08 Hz (5.00105 s)",
+  "link: opened in 0.69 s, read 100020.9 KB in 5.11 s (19581.2 KB/s)",
+  "data rate: 20 MB/s",
+  "buffer: 8631515 B on the probe: this host may pause 432 ms before it drops",
+  "stream: 100020.9 KB in 5200 frames over 5.11 s (19581.2 KB/s)"
+ ]
+}

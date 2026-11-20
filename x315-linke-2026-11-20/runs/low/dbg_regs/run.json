@@ -1,0 +1,44 @@
+{
+ "format": "wireskein-run/1",
+ "meta": {
+  "target": "CH32X315MCU6",
+  "target_uid": "36a0abcd9eb5bc48",
+  "linke": "FBC18F0680B0",
+  "tap": "LinkE side",
+  "probe": "oep:oep://e8f60ae84dd7",
+  "scenario": "low/dbg_regs",
+  "holdout": false
+ },
+ "log": [
+  {
+   "host_ns": 3107460550485637,
+   "src": "marker",
+   "text": "# low/dbg_regs"
+  },
+  {
+   "host_ns": 3107463558769629,
+   "src": "host",
+   "text": "ch32rv --probe serial:FBC18F0680B0 --json --non-interactive --progress none --capture ch32rv.ndjson --speed low dbg regs"
+  },
+  {
+   "host_ns": 3107463790507708,
+   "src": "dut",
+   "text": "exit 0 in 0.232 s"
+  },
+  {
+   "host_ns": 3107463790513242,
+   "src": "marker",
+   "text": "#"
+  }
+ ],
+ "captures": [
+  {
+   "file": "c0001.wireskein",
+   "host_ns": 3107460550496739,
+   "channels": [
+    "SWIO"
+   ]
+  }
+ ],
+ "expect": {}
+}

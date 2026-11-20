@@ -1,0 +1,44 @@
+{
+ "format": "wireskein-run/1",
+ "meta": {
+  "target": "CH32X315MCU6",
+  "target_uid": "36a0abcd9eb5bc48",
+  "linke": "FBC18F0680B0",
+  "tap": "LinkE side",
+  "probe": "oep:oep://e8f60ae84dd7",
+  "scenario": "low/flash_pattern4k",
+  "holdout": false
+ },
+ "log": [
+  {
+   "host_ns": 3107393699867882,
+   "src": "marker",
+   "text": "# low/flash_pattern4k"
+  },
+  {
+   "host_ns": 3107396708525002,
+   "src": "host",
+   "text": "ch32rv --probe serial:FBC18F0680B0 --json --non-interactive --progress none --capture ch32rv.ndjson --speed low flash tools/pattern-4k.bin --yes"
+  },
+  {
+   "host_ns": 3107397593686733,
+   "src": "dut",
+   "text": "exit 0 in 0.885 s"
+  },
+  {
+   "host_ns": 3107397593694015,
+   "src": "marker",
+   "text": "#"
+  }
+ ],
+ "captures": [
+  {
+   "file": "c0001.wireskein",
+   "host_ns": 3107393699880770,
+   "channels": [
+    "SWIO"
+   ]
+  }
+ ],
+ "expect": {}
+}
