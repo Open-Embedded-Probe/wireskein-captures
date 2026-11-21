@@ -1,0 +1,45 @@
+{
+ "format": "wireskein-run/1",
+ "meta": {
+  "probe": "oep://30eda0e31451",
+  "line": "GPIO15"
+ },
+ "log": [
+  {
+   "host_ns": 3207701092024080,
+   "src": "note",
+   "text": "capture: esp32p4 30eda0e31451 firmware 0.0.59+6412594, GPIO15 at 80000000 S/s, 400000 samples from 2000 before SWIO's first fall"
+  },
+  {
+   "host_ns": 3207701092097635,
+   "src": "note",
+   "text": "RVSWD from ch32x035 283fbc5cc016abcd firmware 0.0.60+a7adace, channels (0, 1) (SWDIO, SWCLK)"
+  },
+  {
+   "host_ns": 3207701098998461,
+   "src": "marker",
+   "text": "# x035_a7adace"
+  },
+  {
+   "host_ns": 3207701445630866,
+   "src": "marker",
+   "text": "#"
+  },
+  {
+   "host_ns": 3207701641721149,
+   "src": "note",
+   "text": "attach: Failed: failed"
+  }
+ ],
+ "captures": [
+  {
+   "file": "c0001.wireskein",
+   "host_ns": 3207701100558588,
+   "channels": [
+    "SWDIO",
+    "SWCLK"
+   ]
+  }
+ ],
+ "expect": {}
+}

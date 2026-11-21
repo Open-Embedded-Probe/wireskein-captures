@@ -17,6 +17,7 @@ WireSkein の外から取った正解（デバッガやファームウェア自�
 | `x315-linke-2026-11-20/` | WCH-LinkE → CH32X315MCU6 の SWIO を、同じ P4X で SWIO の 1 線だけ 160 MS/s で。LinkE の速さ high / medium / low の 14 操作と target info 3 本（45 本、うち 3 本は接続の失敗）。`two-wire/` に 1 線 → 2 線の切り替えの実験 9 本（50 MS/s、SWIO・SWCLK。DMI `0x7E`・`0x7D` の書き込みと LinkE の `ee 02` / `ee 03`）。正解は ch32rv の USB の記録と読んだ中身 |
 | `x315-linke-tap-2026-11-20/` | WCH-LinkE → CH32X315MCU6 の target info を、同じ P4X で 2 線（SWCLK・SWDIO）・80 / 160 MS/s で 3 本。うち 2 本は GPIO16 の分岐が浮いていた記録、1 本は直した後（1 線の SWIO が V003 と同じ形）。浮いた入力を見分ける試験の組。正解は ch32rv の USB の記録 |
 | `x035-swio-2026-11-21/` | OEP のプローブの SWIO を、OEP の ESP32-P4 で 80 MS/s で（相手の石なし）。V003 に通る ESP32-P4 自身の波形と、CH32X035 の版ごとの波形（通らない 3 本と通る 2 本）。正解は同じ版を V003 に attach した結果 |
+| `x035-rvswd-2026-11-21/` | OEP のプローブの RVSWD の attach を、OEP の ESP32-P4 で 80 MS/s で（相手の石なし）。ESP32-P4 自身と CH32X035 の波形。相手が返事をしないので、探しの遅い速さだけ |
 
 各 run は wireskein-run/1（`run.json`、`c0001.wireskein`）に、`take.json`（取り方）、`truth.json`（正解）、
 `reading.json`（その時の WireSkein の読み。正解ではない）、デバッガ自身のファイルを添えたものです。

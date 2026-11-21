@@ -17,6 +17,7 @@ Captures are taken here: each directory's `tools/` takes them (`capture.py`), ch
 | `x315-linke-2026-11-20/` | A WCH-LinkE's SWIO to a CH32X315MCU6, taken by the same P4X on the one SWIO line at 160 MS/s: the 14 operations at the LinkE's speeds high / medium / low and 3 more target infos (45 runs, 3 of them failed attaches). `two-wire/`: 9 runs switching from one line to two (50 MS/s, SWIO and SWCLK: DMI `0x7E` and `0x7D` written, the LinkE's `ee 02` / `ee 03`). Truth: ch32rv's USB record and what it read |
 | `x315-linke-tap-2026-11-20/` | A WCH-LinkE's target info to a CH32X315MCU6, taken by the same P4X on both lines (SWCLK, SWDIO) at 80 / 160 MS/s: 3 runs, 2 with the GPIO16 tap floating (not reaching the LinkE's SWDIO), 1 after it was fixed (the one-line SWIO shaped as the V003's). A pair for telling a floating input. Truth: ch32rv's USB record |
 | `x035-swio-2026-11-21/` | OEP probes' SWIO taken by an OEP ESP32-P4 at 80 MS/s (no target on the line): the ESP32-P4's own frames, which attach a V003, and a CH32X035's builds (three that do not, two that do). Truth: the same build attaching a V003 |
+| `x035-rvswd-2026-11-21/` | OEP probes' RVSWD attaches taken by an OEP ESP32-P4 at 80 MS/s (no target on the lines): the ESP32-P4's own and a CH32X035's; with no answer, only the search's slow speed |
 
 Each run is wireskein-run/1 (`run.json`, `c0001.wireskein`) with `take.json` (how it was taken), `truth.json`
 (the truth), `reading.json` (WireSkein's reading at the time: not truth), and the debugger's own files.
