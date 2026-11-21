@@ -14,7 +14,9 @@ OEP のプローブが出す RVSWD（2 線）の attach の波形を、OEP の E
   通常の速さは、相手のいる線でしか見えません。
 - SWCLK（`tools/runs.py` で読んだ生の長さ）: `p4_ref` は low 560〜720 ns、high 620〜840 ns（周期 約 1.2〜1.5 µs）。`x035_a7adace` は
   low 1.3〜1.5 µs、high 2.0〜2.2 µs（周期 約 3.3 µs）。
-- WireSkein は、どちらも RVSWD として読めません（相手の返事が無いので）。
+- WireSkein は、ヒントなしでは RVSWD と言い切れず sync_unknown になります（返事の無いフレームしかないので）。RVSWD のヒントを付けると
+  （`--hint rvswd`、古い版では `--hint '{"protocols": ["rvswd"]}'`）、RVSWD として読みます: `p4_ref` は 14 フレーム（ok 2、返事なし 9）、
+  `x035_a7adace` は 11 フレーム（ok 8、返事なし 2）。
 
 ## 道具
 

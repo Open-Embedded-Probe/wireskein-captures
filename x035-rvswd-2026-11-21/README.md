@@ -16,7 +16,9 @@ on the lines: a first look at the timing of a CH32X035 as an RVSWD probe.
   the target answers, so the usual speed shows only on a line with a target.
 - SWCLK (raw lengths read by `tools/runs.py`): `p4_ref` low 560-720 ns, high 620-840 ns (a period of some 1.2-1.5 us);
   `x035_a7adace` low 1.3-1.5 us, high 2.0-2.2 us (some 3.3 us).
-- WireSkein reads neither as RVSWD (no target answers).
+- Without a hint WireSkein cannot tell RVSWD for sure and reads sync_unknown (no frame has an answer). With the RVSWD
+  hint (`--hint rvswd`; `--hint '{"protocols": ["rvswd"]}'` on older versions) it reads RVSWD: `p4_ref` 14 frames (2 ok,
+  9 unanswered), `x035_a7adace` 11 frames (8 ok, 2 unanswered).
 
 ## Tools
 
