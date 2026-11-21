@@ -1,0 +1,49 @@
+{
+ "format": "wireskein-run/1",
+ "meta": {
+  "probe": "oep://30eda0e31451",
+  "line": "GPIO15"
+ },
+ "log": [
+  {
+   "host_ns": 3189344331362605,
+   "src": "note",
+   "text": "capture: esp32p4 30eda0e31451 firmware 0.0.59+6412594, GPIO15 at 80000000 S/s, 400000 samples from 2000 before SWIO's first fall"
+  },
+  {
+   "host_ns": 3189344331392653,
+   "src": "note",
+   "text": "SWIO from ch32x035 283fbc5cc016abcd firmware 0.0.59, channel 0"
+  },
+  {
+   "host_ns": 3189344331393994,
+   "src": "note",
+   "text": "fails on a CH32V003F4P6 at the first X035's PA0 (9-4, the V003 a Pico wrote on that wiring before): nothing answered"
+  },
+  {
+   "host_ns": 3189344338520122,
+   "src": "marker",
+   "text": "# x035_late-5-9-10"
+  },
+  {
+   "host_ns": 3189344441419591,
+   "src": "marker",
+   "text": "#"
+  },
+  {
+   "host_ns": 3189344573036856,
+   "src": "note",
+   "text": "attach: Failed: failed"
+  }
+ ],
+ "captures": [
+  {
+   "file": "c0001.wireskein",
+   "host_ns": 3189344340149327,
+   "channels": [
+    "SWIO"
+   ]
+  }
+ ],
+ "expect": {}
+}

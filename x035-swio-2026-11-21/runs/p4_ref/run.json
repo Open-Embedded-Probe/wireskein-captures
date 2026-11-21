@@ -1,0 +1,49 @@
+{
+ "format": "wireskein-run/1",
+ "meta": {
+  "probe": "oep://30eda0e31451",
+  "line": "GPIO15"
+ },
+ "log": [
+  {
+   "host_ns": 3189306487878676,
+   "src": "note",
+   "text": "capture: esp32p4 30eda0e31451 firmware 0.0.59+6412594, GPIO15 at 80000000 S/s, 400000 samples from 2000 before SWIO's first fall"
+  },
+  {
+   "host_ns": 3189306487912229,
+   "src": "note",
+   "text": "SWIO from esp32p4 30eda0e31451 firmware 0.0.59+6412594, channel 15"
+  },
+  {
+   "host_ns": 3189306487913737,
+   "src": "note",
+   "text": "this P4's SWIO frames attach a CH32V003 on the benches (the same firmware on 30eda0e34a0e / v003f4p6)"
+  },
+  {
+   "host_ns": 3189306495721880,
+   "src": "marker",
+   "text": "# p4_ref"
+  },
+  {
+   "host_ns": 3189306583549254,
+   "src": "marker",
+   "text": "#"
+  },
+  {
+   "host_ns": 3189306792498704,
+   "src": "note",
+   "text": "attach: Failed: failed"
+  }
+ ],
+ "captures": [
+  {
+   "file": "c0001.wireskein",
+   "host_ns": 3189306497455008,
+   "channels": [
+    "SWIO"
+   ]
+  }
+ ],
+ "expect": {}
+}
