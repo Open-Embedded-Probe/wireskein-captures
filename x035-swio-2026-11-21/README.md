@@ -13,6 +13,7 @@ fitting the SWIO timing of a CH32X035 as an OEP probe.
 | `x035_late-5-9-10` | A CH32X035F8U6's SWIO (PA0): each step's lateness taken off per step, 5 / 9 / 10 counts | Does not attach |
 | `x035_readbit-timeline` | As above, the read bits stepped on deadlines alone, a one not waiting for the rise | Does not attach |
 | `x035_half-late-2` | As above, the read's half step less 2 counts | Does not attach |
+| `x035_sample-750ns` | As above, the read's first recharge dropped, sampled 750 ns after the release | Attaches (10 of 10; target info, 16 KiB of flash read twice alike) |
 
 - No target is on the line taken (the X035's PA0 and the P4's GPIO15 only): the waveform is the probe's own, the read
   bits come back high from the pull-up.
@@ -29,6 +30,7 @@ WireSkein's reading (`tools/summary.py`, the medians over each run's frames):
 | `x035_late-5-9-10` | 24, all ok | 287.5 ns | 850.0 ns | 350.0 ns | 1387.5 ns | 1012.5 ns |
 | `x035_readbit-timeline` | 24, all ok | 287.5 ns | 812.5 ns | 400.0 ns | 950.0 ns | 687.5 ns |
 | `x035_half-late-2` | 24, all ok | 287.5 ns | 812.5 ns | 400.0 ns | 950.0 ns | 687.5 ns |
+| `x035_sample-750ns` | 24, all ok | 287.5 ns | 812.5 ns | 337.5 ns | 734.4 ns | 768.8 ns |
 
 For comparison, a WCH-LinkE's SWIO to a CH32V003 (`../v003-linke-2026-11-17/runs/high/target_info`): short low 250 ns,
 long low 875 ns, write high 369 ns, read bit pitch 766 ns, read high 391 ns.

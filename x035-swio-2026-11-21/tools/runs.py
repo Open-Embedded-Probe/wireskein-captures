@@ -4,7 +4,7 @@ import sys
 import numpy as np
 from wireskein import capture as wc
 cap = wc.read(f"{sys.argv[1]}/c0001.wireskein")
-ch = cap.parts[0].channel("SWIO")
+ch = cap.parts[0].channel(sys.argv[4] if len(sys.argv) > 4 else "SWIO")
 ns = 1e9 / float(cap.tick_hz)
 def changes(ch):
     """(start level, change ticks) of an events channel (wireskein-format 4.4: varint delta k, then the level byte)."""

@@ -11,6 +11,7 @@ CH32X035 を OEP のプローブにするときの、SWIO の時間の合わせ�
 | `x035_late-5-9-10` | CH32X035F8U6 の SWIO（PA0）。エッジごとの遅れを段ごとに 5 / 9 / 10 tick 差し引いた版 | 通らない |
 | `x035_readbit-timeline` | 上に加え、読みのビットを締め切りの足し算だけで進め、1 を読んだら立ち上がりを待たない版 | 通らない |
 | `x035_half-late-2` | 上に加え、読みの half の差し引きを 2 tick にした版 | 通らない |
+| `x035_sample-750ns` | 上に加え、読みの最初の押し上げ（recharge）をやめ、放してから 750 ns でサンプルする版 | 通る（attach 10 回中 10 回、target info、flash 16 KiB の読み出し 2 回が一致） |
 
 - 取り込んだ線には相手の石がいません（X035 の PA0 と P4 の GPIO15 だけ）。波形はプローブが出したもので、読みのビットはプルアップで high に戻ります。
 - 「CH32V003 で」の列は、同じ版を別の CH32X035F8U6（WeAct のボード、PA0 に V003 の SWIO、V003 は X035 のボードの 3V3 から給電）に焼いて attach した結果です。その線は取り込んでいません。
@@ -24,6 +25,7 @@ WireSkein の読み（`tools/summary.py`、各 run のフレームの中央値�
 | `x035_late-5-9-10` | 24、全部 ok | 287.5 ns | 850.0 ns | 350.0 ns | 1387.5 ns | 1012.5 ns |
 | `x035_readbit-timeline` | 24、全部 ok | 287.5 ns | 812.5 ns | 400.0 ns | 950.0 ns | 687.5 ns |
 | `x035_half-late-2` | 24、全部 ok | 287.5 ns | 812.5 ns | 400.0 ns | 950.0 ns | 687.5 ns |
+| `x035_sample-750ns` | 24、全部 ok | 287.5 ns | 812.5 ns | 337.5 ns | 734.4 ns | 768.8 ns |
 
 参考に、WCH-LinkE → CH32V003 の SWIO（`../v003-linke-2026-11-17/runs/high/target_info`）は、短い low 250 ns、長い low 875 ns、
 書き込みの high 369 ns、読みの 1 ビットの周期 766 ns、読みの high 391 ns です。
