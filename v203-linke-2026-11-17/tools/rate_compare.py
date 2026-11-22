@@ -22,7 +22,7 @@ sys.path.insert(0, str(HERE.parents[2]))           # bench/: wsbench
 import truth as T  # noqa: E402
 from wsbench import data as D  # noqa: E402
 from wireskein import capture as C  # noqa: E402
-from wireskein.decode import save  # noqa: E402
+from wireskein.decode import _save as save  # noqa: E402
 from wireskein import _fileformat as F  # noqa: E402
 
 
